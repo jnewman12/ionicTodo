@@ -5,26 +5,17 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
-
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+         <link href="css/ionic.app.css" rel="stylesheet">
+         -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- local storage of data -->
     <script src="lib/angular-local-storage/dist/angular-local-storage.js"></script>
 
     <!-- cordova script (this will be a 404 during development) -->
@@ -54,7 +45,6 @@
               <span ng-bind="task.content"></span>
             </p>
           </div>
-
           <div class="item tabs tabs-secondary tabs-icon-left">
             <span class="item item-checkbox">
               <label class="checkbox">
@@ -71,10 +61,10 @@
     <script id="new-task-modal.html" type="text/ng-template">
       <ion-modal-view>
         <ion-header-bar class="bar-dark">
-            <h1 class="title">Create a new Task</h1>
-            <button class="button button-icon" ng-click="closeTaskModal()">
-              <i class="icon ion-android-close"></i>
-            </button>
+          <h1 class="title">Create a new Task</h1>
+          <button class="button button-icon" ng-click="closeTaskModal()">
+            <i class="icon ion-android-close"></i>
+          </button>
         </ion-header-bar>
         <ion-content>
           <form ng-submit="createTask()">
@@ -90,9 +80,9 @@
                   Completed?
                   <label class="toggle toggle-balanced">
                     <input type="checkbox" ng-model="task.completed">
-                      <div class="track">
-                        <div class="handle"></div>
-                      </div>
+                    <div class="track">
+                      <div class="handle"></div>
+                    </div>
                   </label>
                 </li>
               </ul>
